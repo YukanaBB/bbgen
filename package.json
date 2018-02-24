@@ -1,0 +1,21 @@
+{
+  "name": "bbgen",
+  "version": "2.1.1",
+  "description": "Randomized BBGC generator with cli",
+  "bin": {
+    "bbgen": "bin/bbgen"
+  },
+  "main": "lib/bbgen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anonymous<Anon@y.mouse>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yukanabb/bbgen.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}

@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+var bbgen = require("../lib/bbgen");
+var argv = require('minimist')(process.argv.slice(2));
+var fs = require("fs");
+
+var prefix = argv._;
+var vlen = prefix.length;
+var repeat = argv.n || vlen;
+
+prefix.forEach(function(el) {
+	var path = __dirname + "/../prefix/" + el + ".js";
+	if ( fs.statSync(path) ) {
+
+		var prefix = require(path);
+		bbgen.register(prefix);
+	}
+});
+
+for (; repeat --> 0  ;) {
+	var vix = repeat % vlen;
+	var card = bbgen.generate({
+		type: prefix[vix]
+	});
+	console.log(card.type, card.number);
+}
